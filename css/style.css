@@ -280,47 +280,45 @@
 
 
 /*** Fruits Start ***/
-.fruite .tab-class .nav-item a.active {
+.masala .tab-class .nav-item a.active {
     background: var(--bs-secondary) !important;
 }
 
-.fruite .tab-class .nav-item a.active span {
+.masala .tab-class .nav-item a.active span {
     color: var(--bs-white) !important; 
 }
 
-.fruite .fruite-categorie .fruite-name {
+.masala .masala-categorie .masala-name {
     line-height: 40px;
 }
 
-.fruite .fruite-categorie .fruite-name a {
+.masala .masala-categorie .masala-name a {
     transition: 0.5s;
 }
 
-.fruite .fruite-categorie .fruite-name a:hover {
+.masala .masala-categorie .masala-name a:hover {
     color: var(--bs-secondary);
 }
 
-.fruite .fruite-item {
+.masala .masala-item {
     height: 100%;
     transition: 0.5s;
 }
-.fruite .fruite-item:hover {
+.masala .masala-item:hover {
     box-shadow: 0 0 55px rgba(0, 0, 0, 0.4);
 }
 
-.fruite .fruite-item .fruite-img {
+.masala .masala-item .masala-img {
     overflow: hidden;
     transition: 0.5s;
     border-radius: 10px 10px 0 0;
 }
 
-.fruite .fruite-item .fruite-img img {
+.masala .masala-item .masala-img img {
     transition: 0.5s;
 }
 
-.fruite .fruite-item .fruite-img img:hover {
-    transform: scale(1.3);
-}
+
 /*** Fruits End ***/
 
 
@@ -498,3 +496,58 @@
 }
 /*** Footer End ***/
 
+ 
+          /* Luxurious Orange Theme Scrollbar */
+      ::-webkit-scrollbar {
+          width: 12px;
+          height: 12px;
+      }
+      
+      ::-webkit-scrollbar-track {
+          background: #fff5e6; /* Light orange background */
+          border-radius: 10px;
+          box-shadow: inset 0 0 5px rgba(255, 165, 0, 0.1);
+      }
+      
+      ::-webkit-scrollbar-thumb {
+          background: linear-gradient(135deg, #ff8c00, #ff6b00, #ff4500);
+          border-radius: 10px;
+          border: 2px solid #fff5e6;
+          box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.3);
+          transition: all 0.3s ease;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(135deg, #ff4500, #ff6b00, #ff8c00);
+          box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.4);
+      }
+      
+      ::-webkit-scrollbar-corner {
+          background: #fff5e6;
+      }
+      
+      /* For Firefox */
+      * {
+          scrollbar-width: thin;
+          scrollbar-color: #ff6b00 #fff5e6;
+      }
+      
+      /* Smooth scrolling effect */
+      html {
+          scroll-behavior: smooth;
+      }
+      
+      /* Scroll glow effect */
+      .scrolling-glow {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: linear-gradient(90deg, #ff8c00, #ff6b00, #ff4500);
+          z-index: 9999;
+          transform-origin: 0 0;
+          transform: scaleX(0);
+          transition: transform 0.2s ease-out;
+          box-shadow: 0 0 10px rgba(255, 107, 0, 0.7);
+      }
