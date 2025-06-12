@@ -10,6 +10,8 @@
   <!-- Google Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet" />
 
   <!-- Icon Font Stylesheet -->
@@ -405,14 +407,164 @@ td.qty {
 
    
   </style>
+  
+<style>
+  /* Add these styles to your existing style section */
+  .payment-processing-animation {
+    width: 150px;
+    height: 100px;
+    position: relative;
+  }
+  
+  .cart-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    animation: moveCart 2s infinite alternate ease-in-out;
+  }
+  
+  .cart {
+    width: 80px;
+    height: 50px;
+    background-color: var(--primary-orange);
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    bottom: 20px;
+    left: 35px;
+    transform-origin: bottom;
+    animation: bounceCart 0.5s infinite alternate;
+  }
+  
+  .cart-body {
+    width: 70px;
+    height: 30px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+  }
+  
+  .cart-wheels {
+    position: absolute;
+    bottom: -10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .wheel {
+    width: 15px;
+    height: 15px;
+    background-color: var(--dark-gray);
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .wheel:before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+  }
+  
+  .road {
+    width: 100%;
+    height: 3px;
+    background-color: var(--dark-gray);
+    position: absolute;
+    bottom: 10px;
+    animation: roadMovement 2s infinite linear;
+  }
+  
+  @keyframes moveCart {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(20px); }
+  }
+  
+  @keyframes bounceCart {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+  }
+  
+  @keyframes roadMovement {
+    0% { background-position: 0 0; }
+    100% { background-position: 40px 0; }
+  }
+  
+  .progress-bar {
+    background-color: var(--primary-orange);
+  }
+</style>
 </head>
-
+<style>
+  /* Add these styles to your existing style section */
+  .lottie-animation-container {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+  }
+  
+  #spinner {
+    transition: all 0.3s ease;
+    backdrop-filter: blur(3px);
+  }
+  
+  #spinner.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  #spinner:not(.show) {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .trust-badges img {
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+  
+  .trust-badges img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+</style>
+  
 <body>
   <!-- Spinner -->
-  <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center">
-    <div class="spinner-grow text-primary" role="status"></div>
+<!-- Replace the existing spinner div with this enhanced version -->
+<div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center flex-column" style="z-index: 9999; background-color: rgba(255, 255, 255, 0.9);">
+  <div class="lottie-animation-container">
+    <dotlottie-player 
+      src="https://lottie.host/02a8f2c8-db67-48c9-8cac-3de3aac96805/V88PD1NVqY.lottie" 
+      background="transparent" 
+      speed="1" 
+      style="width: 300px; height: 300px" 
+      loop 
+      autoplay>
+    </dotlottie-player>
   </div>
-  
+  <h3 class="text-primary mt-3" style="color: var(--primary-orange); font-weight: 600;">Processing Your Payment</h3>
+  <p class="text-muted" style="color: var(--dark-gray); max-width: 300px; text-align: center;">
+    Securing your transaction with 128-bit encryption
+  </p>
+  <div class="trust-badges mt-3 d-flex gap-3">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png" alt="Visa" style="height: 20px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1200px-Mastercard-logo.svg.png" alt="Mastercard" style="height: 20px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Razorpay_logo.svg/1200px-Razorpay_logo.svg.png" alt="Razorpay" style="height: 20px;">
+  </div>
+</div>
+
+<!-- Add this script to your head section -->
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
+
   <!-- Checkout Page Content -->
   <div class="container-fluid py-5 ">
     <div class="container py-5 checkout-container">
@@ -507,7 +659,7 @@ td.qty {
                       </tr>
                       <tr>
                         <td colspan="4" class="text-end text-dark">Shipping:</td>
-                        <td class="shipping text-dark">₹2.00</td>
+                        <td class="shipping text-dark">₹40.00</td>
                       </tr>
                       <tr>
                         <td colspan="4" class="text-end fw-bold text-dark">Total:</td>

@@ -32,6 +32,25 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1346534639805598');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1346534639805598&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 
 <body>
@@ -718,7 +737,6 @@
 
 
         }
-        
     </style>
     <!-- Navbar HTML -->
     <div class="container-fluid" id="mainNavbar">
@@ -900,7 +918,7 @@
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="rounded position-relative masala-item">
                                                 <div class="masala-img">
-                                                    <img src="img/curryMasalaPowder.jpg"
+                                                    <img src="img/CurryMAsalaPowderOrig.jpg"
                                                         class="img-fluid w-100 rounded-top"
                                                         style="height: 100%; object-fit: cover;" alt="Sambar Podi">
                                                 </div>
@@ -1001,7 +1019,8 @@
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="rounded position-relative masala-item">
                                                 <div class="masala-img" style="height: 320px; overflow: hidden;">
-                                                    <img src="img/chilliPowder.jpg" class="img-fluid w-100 rounded-top"
+                                                    <img src="img/ChilliPowderORIG.jpg"
+                                                        class="img-fluid w-100 rounded-top"
                                                         style="height: 100%; object-fit: cover;" alt="Chilli Powder">
                                                 </div>
                                                 <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
@@ -1181,12 +1200,12 @@
                                                     <img src="img/idliMilagaiPodi.jpg"
                                                         class="img-fluid w-100 rounded-top"
                                                         style="height: 100%; object-fit: cover;"
-                                                        alt="Idili Milagai Podi">
+                                                        alt="Idli Milagai Podi">
                                                 </div>
                                                 <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                                                     style="top: 20px; left: 10px;">Masala</div>
                                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                    <h4 class="py-2">Idili Milagai Podi</h4>
+                                                    <h4 class="py-2">Idli Milagai Podi</h4>
                                                     <input type="radio" name="weight-idli" id="idli-100g" checked>
                                                     <label for="idli-100g">100g</label>
                                                     <input type="radio" name="weight-idli" id="idli-250g">
@@ -1209,7 +1228,8 @@
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="rounded position-relative masala-item">
                                                 <div class="masala-img" style="height: 320px; overflow: hidden;">
-                                                    <img src="img/chickenMasala.jpg" class="img-fluid w-100 rounded-top"
+                                                    <img src="img/ChickenMasalaOrig.jpg"
+                                                        class="img-fluid w-100 rounded-top"
                                                         style="height: 100%; object-fit: cover;" alt="Chicken Masala">
                                                 </div>
                                                 <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
@@ -1310,7 +1330,7 @@
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="rounded position-relative masala-item">
                                                 <div class="masala-img" style="height: 320px; overflow: hidden;">
-                                                    <img src="img/moringaPodi.jpg" class="img-fluid w-100 rounded-top"
+                                                    <img src="img/moringa.jpg" class="img-fluid w-100 rounded-top"
                                                         style="height: 100%; object-fit: cover;"
                                                         alt="Murungai Keerai Powder">
                                                 </div>
@@ -1318,13 +1338,34 @@
                                                     style="top: 20px; left: 10px;">Health</div>
                                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                     <h4 class="py-2">Murungai Keerai Powder</h4>
-                                                    <input type="radio" name="weight-murungaipowder"
-                                                        id="murungaipowder-100g" checked>
-                                                    <label for="murungaipowder-100g">100g</label>
+
+                                                    <!-- Radio buttons for weight options -->
+                                                    <div>
+                                                        <input type="radio" name="weight-murungaipowder"
+                                                            id="murungaipowder-100g" value="100g" checked
+                                                            onchange="updatePrice(this)">
+                                                        <label for="murungaipowder-100g">100g</label>
+
+                                                        <input type="radio" name="weight-murungaipowder"
+                                                            id="murungaipowder-250g" value="250g"
+                                                            onchange="updatePrice(this)" class="ms-3">
+                                                        <label for="murungaipowder-250g">250g</label>
+
+                                                        <input type="radio" name="weight-murungaipowder"
+                                                            id="murungaipowder-500g" value="500g"
+                                                            onchange="updatePrice(this)" class="ms-3">
+                                                        <label for="murungaipowder-500g">500g</label>
+                                                    </div>
+
+                                                    <!-- Price -->
                                                     <p class="text-dark fs-5 fw-bold mb-0 masala-price-view"
-                                                        style="margin-top: 20px;">₹80.00 / 100g</p>
+                                                        style="margin-top: 20px;" id="price-murungaipowder">
+                                                        ₹80.00 / 100g
+                                                    </p>
+
+                                                    <!-- Add to cart button -->
                                                     <a class="btn border border-secondary rounded-pill px-3 text-primary mb-2"
-                                                        onclick="cart(event)">
+                                                        onclick="cart(event, 'murungaipowder')">
                                                         <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
                                                     </a>
                                                 </div>
@@ -1335,7 +1376,8 @@
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="rounded position-relative masala-item">
                                                 <div class="masala-img" style="height: 320px; overflow: hidden;">
-                                                    <img src="img/murungaIdlipodi.jpg" class="img-fluid w-100 rounded-top"
+                                                    <img src="img/murungaIdlipodi.jpg"
+                                                        class="img-fluid w-100 rounded-top"
                                                         style="height: 100%; object-fit: cover;"
                                                         alt="Murungai Keerai Podi">
                                                 </div>
@@ -1343,11 +1385,22 @@
                                                     style="top: 20px; left: 10px;">Podi</div>
                                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                     <h4 class="py-2">Murungai Keerai Idly/Rice Podi</h4>
+
                                                     <input type="radio" name="weight-murungaipodi"
                                                         id="murungaipodi-100g" checked>
                                                     <label for="murungaipodi-100g">100g</label>
+                                                    <input type="radio" name="weight-murungaipodi"
+                                                        id="murungaipodi-250g">
+                                                    <label for="murungaipodi-250g">250g</label>
+                                                    <input type="radio" name="weight-murungaipodi"
+                                                        id="murungaipodi-500g">
+                                                    <label for="murungaipodi-500g">500g</label>
+
                                                     <p class="text-dark fs-5 fw-bold mb-0 masala-price-view"
-                                                        style="margin-top: 20px;">₹100.00 / 100g</p>
+                                                        style="margin-top: 20px;">
+                                                        ₹100.00 / 100g
+                                                    </p>
+
                                                     <a class="btn border border-secondary rounded-pill px-3 text-primary mb-2"
                                                         onclick="cart(event)">
                                                         <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
@@ -1360,7 +1413,8 @@
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="rounded position-relative masala-item">
                                                 <div class="masala-img" style="height: 320px; overflow: hidden;">
-                                                    <img src="img/karuppuKavuniRice2.jpg" class="img-fluid w-100 rounded-top"
+                                                    <img src="img/karuppuKavuniRice2.jpg"
+                                                        class="img-fluid w-100 rounded-top"
                                                         style="height: 100%; object-fit: cover;"
                                                         alt="Karuppu Kavuni Rice">
                                                 </div>
@@ -1380,6 +1434,34 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <!-- Product - Black Pepper -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                            <div class="rounded position-relative masala-item">
+                                                <div class="masala-img" style="height: 320px; overflow: hidden;">
+                                                    <img src="img/blackpepper.jpg" class="img-fluid w-100 rounded-top"
+                                                        style="height: 100%; object-fit: cover;" alt="Black Pepper">
+                                                </div>
+                                                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                                                    style="top: 20px; left: 10px;">Spice</div>
+                                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                    <h4 class="py-2">Black Pepper</h4>
+
+                                                    <input type="radio" name="weight-blackpepper" id="blackpepper-100g"
+                                                        checked>
+                                                    <label for="blackpepper-100g">100g</label>
+
+                                                    <p class="text-dark fs-5 fw-bold mb-0 masala-price-view"
+                                                        style="margin-top: 20px;">₹90.00 / 100g</p>
+
+                                                    <a class="btn border border-secondary rounded-pill px-3 text-primary mb-2"
+                                                        onclick="cart(event)">
+                                                        <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
 
 
 
@@ -1519,47 +1601,66 @@
                                                     style="top: 20px; left: 10px;">Health Drink</div>
                                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                     <h4 class="py-2">Karuppu Ulunthu Premix</h4>
-                                                    <input type="radio" name="weight-ulunthu" id="ulunthu-100g" checked>
-                                                    <label for="ulunthu-100g">100g</label>
-                                                    <input type="radio" name="weight-ulunthu" id="ulunthu-250g">
+
+                                                    <input type="radio" name="weight-ulunthu" id="ulunthu-250g"
+                                                        value="250g" checked onchange="updatePrice(this)">
                                                     <label for="ulunthu-250g">250g</label>
-                                                    <input type="radio" name="weight-ulunthu" id="ulunthu-500g">
+
+                                                    <input type="radio" name="weight-ulunthu" id="ulunthu-500g"
+                                                        value="500g" onchange="updatePrice(this)" class="ms-3">
                                                     <label for="ulunthu-500g">500g</label>
+
                                                     <p class="text-dark fs-5 fw-bold mb-0 masala-price-view"
-                                                        style="margin-top: 20px;">₹140.00 / 100g</p>
+                                                        style="margin-top: 20px;" id="price-ulunthu">
+                                                        ₹160.00 / 250g
+                                                    </p>
+
                                                     <a class="btn border border-secondary rounded-pill px-3 text-primary mb-2"
-                                                        onclick="cart(event)">
+                                                        onclick="cart(event, 'ulunthu')">
                                                         <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
 
+
                                         <!-- Product 21 - Multi Grain Health Mix -->
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="rounded position-relative masala-item">
                                                 <div class="masala-img" style="height: 320px; overflow: hidden;">
                                                     <img src="img/multigrainmix.jpg" class="img-fluid w-100 rounded-top"
-                                                        style="height: 100%; object-fit: cover;" alt="">
+                                                        style="height: 100%; object-fit: cover;"
+                                                        alt="Multi Grain Health Mix">
                                                 </div>
                                                 <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                                                     style="top: 20px; left: 10px;">Health Drink</div>
                                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                     <h4 class="py-2">Multi Grain Health Mix</h4>
-                                                    <input type="radio" name="weight-multigrain" id="multigrain-100g"
-                                                        checked>
-                                                    <label for="multigrain-100g">100g</label>
-                                                    <input type="radio" name="weight-multigrain" id="multigrain-250g">
+
+                                                    <!-- Radio options -->
+                                                    <input type="radio" name="weight-multigrain" id="multigrain-250g"
+                                                        value="250g" checked onchange="updatePrice(this)">
                                                     <label for="multigrain-250g">250g</label>
+
+                                                    <input type="radio" name="weight-multigrain" id="multigrain-500g"
+                                                        value="500g" class="ms-3" onchange="updatePrice(this)">
+                                                    <label for="multigrain-500g">500g</label>
+
+                                                    <!-- Price display -->
                                                     <p class="text-dark fs-5 fw-bold mb-0 masala-price-view"
-                                                        style="margin-top: 20px;">₹225.00 / 100g</p>
+                                                        style="margin-top: 20px;" id="price-multigrain">
+                                                        ₹450.00 / 250g
+                                                    </p>
+
+                                                    <!-- Add to cart -->
                                                     <a class="btn border border-secondary rounded-pill px-3 text-primary mb-2"
-                                                        onclick="cart(event)">
+                                                        onclick="cart(event, 'multigrain')">
                                                         <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
+
 
                                         <!-- Product 22 - Karuppu Kovni Kollu Kanji Mix -->
                                         <div class="col-md-6 col-lg-4 col-xl-3">
@@ -1567,76 +1668,112 @@
                                                 <div class="masala-img" style="height: 320px; overflow: hidden;">
                                                     <img src="img/karuppukavunimix.jpg"
                                                         class="img-fluid w-100 rounded-top"
-                                                        style="height: 100%; object-fit: cover;" alt="">
+                                                        style="height: 100%; object-fit: cover;"
+                                                        alt="Karuppu Kovni Kollu Kanji Mix">
                                                 </div>
                                                 <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                                                     style="top: 20px; left: 10px;">Health Drink</div>
                                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                     <h4 class="py-2">Karuppu Kovni Kollu Kanji Mix</h4>
-                                                    <input type="radio" name="weight-kollu" id="kollu-100g" checked>
-                                                    <label for="kollu-100g">100g</label>
-                                                    <input type="radio" name="weight-kollu" id="kollu-250g">
+
+                                                    <!-- Only 250g and 500g options -->
+                                                    <input type="radio" name="weight-kollu" id="kollu-250g" value="250g"
+                                                        checked onchange="updatePrice(this)">
                                                     <label for="kollu-250g">250g</label>
+
+                                                    <input type="radio" name="weight-kollu" id="kollu-500g" value="500g"
+                                                        class="ms-3" onchange="updatePrice(this)">
+                                                    <label for="kollu-500g">500g</label>
+
+                                                    <!-- Price Display -->
                                                     <p class="text-dark fs-5 fw-bold mb-0 masala-price-view"
-                                                        style="margin-top: 20px;">₹342.00 / 100g</p>
+                                                        style="margin-top: 20px;" id="price-kollu">
+                                                        180.00 / 250g
+                                                    </p>
+
+                                                    <!-- Add to cart -->
                                                     <a class="btn border border-secondary rounded-pill px-3 text-primary mb-2"
-                                                        onclick="cart(event)">
+                                                        onclick="cart(event, 'kollu')">
                                                         <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
 
+
                                         <!-- Product 23 - Sprouted Ragi Flour -->
                                         <!-- <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="rounded position-relative masala-item">
                                                 <div class="masala-img" style="height: 320px; overflow: hidden;">
                                                     <img src="img/bowlmasala.avif" class="img-fluid w-100 rounded-top"
-                                                        style="height: 100%; object-fit: cover;" alt="">
+                                                        style="height: 100%; object-fit: cover;"
+                                                        alt="Sprouted Ragi Flour">
                                                 </div>
                                                 <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                                                     style="top: 20px; left: 10px;">Health Drink</div>
                                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                     <h4 class="py-2">Sprouted Ragi Flour</h4>
-                                                    <input type="radio" name="weight-ragi" id="ragi-100g" checked>
-                                                    <label for="ragi-100g">100g</label>
-                                                    <input type="radio" name="weight-ragi" id="ragi-250g">
+
+                                                    <input type="radio" name="weight-ragi" id="ragi-250g" value="250g"
+                                                        checked onchange="updatePrice(this)">
                                                     <label for="ragi-250g">250g</label>
+
+                                                    <input type="radio" name="weight-ragi" id="ragi-500g" value="500g"
+                                                        class="ms-3" onchange="updatePrice(this)">
+                                                    <label for="ragi-500g">500g</label>
+
                                                     <p class="text-dark fs-5 fw-bold mb-0 masala-price-view"
-                                                        style="margin-top: 20px;">₹215.00 / 100g</p>
+                                                        style="margin-top: 20px;" id="price-ragi">
+                                                        ₹130.00 / 250g
+                                                    </p>
+
                                                     <a class="btn border border-secondary rounded-pill px-3 text-primary mb-2"
-                                                        onclick="cart(event)">
+                                                        onclick="cart(event, 'ragi')">
                                                         <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
                                                     </a>
                                                 </div>
                                             </div>
                                         </div> -->
 
+
                                         <!-- Product 24 - Sprouted Ragi Milk Powder -->
-                                        <!-- <div class="col-md-6 col-lg-4 col-xl-3">
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="rounded position-relative masala-item">
                                                 <div class="masala-img" style="height: 320px; overflow: hidden;">
-                                                    <img src="img/bowlmasala.avif" class="img-fluid w-100 rounded-top"
-                                                        style="height: 100%; object-fit: cover;" alt="">
+                                                    <img src="img/sproutedRagiMilkPowder.jpg"
+                                                        class="img-fluid w-100 rounded-top"
+                                                        style="height: 100%; object-fit: cover;"
+                                                        alt="Sprouted Ragi Milk Powder">
                                                 </div>
                                                 <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                                                     style="top: 20px; left: 10px;">Health Drink</div>
                                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                     <h4 class="py-2">Sprouted Ragi Milk Powder</h4>
-                                                    <input type="radio" name="weight-ragimilk" id="ragimilk-100g"
-                                                        checked>
-                                                    <label for="ragimilk-100g">100g</label>
-                                                    <input type="radio" name="weight-ragimilk" id="ragimilk-250g">
+
+                                                    <!-- Radio options -->
+                                                    <input type="radio" name="weight-ragimilk" id="ragimilk-250g"
+                                                        value="250g" checked onchange="updatePrice(this)">
                                                     <label for="ragimilk-250g">250g</label>
+
+                                                    <input type="radio" name="weight-ragimilk" id="ragimilk-500g"
+                                                        value="500g" class="ms-3" onchange="updatePrice(this)">
+                                                    <label for="ragimilk-500g">500g</label>
+
+                                                    <!-- Price display -->
                                                     <p class="text-dark fs-5 fw-bold mb-0 masala-price-view"
-                                                        style="margin-top: 20px;">₹225.00 / 100g</p>
+                                                        style="margin-top: 20px;" id="price-ragimilk">
+                                                        ₹150.00 / 250g
+                                                    </p>
+
+                                                    <!-- Add to cart -->
                                                     <a class="btn border border-secondary rounded-pill px-3 text-primary mb-2"
-                                                        onclick="cart(event)">
+                                                        onclick="cart(event, 'ragimilk')">
                                                         <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
                                                     </a>
                                                 </div>
                                             </div>
-                                        </div> -->
+                                        </div>
+
 
 
                                     </div>
@@ -1663,19 +1800,31 @@
                                                 <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                                                     style="top: 20px; left: 10px;">Beauty</div>
                                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                    <h4 class="py-2">Nalangu Mavu</h4>
-                                                    <input type="radio" name="weight-nalangu" id="nalangu-100g" checked>
-                                                    <label for="nalangu-100g">100g</label>
-                                                    <input type="radio" name="weight-nalangu" id="nalangu-250g">
+                                                    <h4 class="py-2">Nalangu Maavu <br> (Skin brightening herbal face
+                                                        pack and baby bath powder)</h4>
+
+                                                    <!-- Updated weight options -->
+                                                    <input type="radio" name="weight-nalangu" id="nalangu-250g"
+                                                        value="250g">
                                                     <label for="nalangu-250g">250g</label>
-                                                    <input type="radio" name="weight-nalangu" id="nalangu-500g">
+
+                                                    <input type="radio" name="weight-nalangu" id="nalangu-500g"
+                                                        value="500g" class="ms-3" checked>
                                                     <label for="nalangu-500g">500g</label>
-                                                    <input type="radio" name="weight-nalangu" id="nalangu-1kg">
+
+                                                    <input type="radio" name="weight-nalangu" id="nalangu-1kg"
+                                                        value="1kg" class="ms-3">
                                                     <label for="nalangu-1kg">1kg</label>
+
+                                                    <!-- Price -->
                                                     <p class="text-dark fs-5 fw-bold mb-0 masala-price-view"
-                                                        style="margin-top: 20px;">₹80.00 / 100g</p>
+                                                        style="margin-top: 20px;" id="price-nalangu">
+                                                        ₹320.00 / 500g
+                                                    </p>
+
+                                                    <!-- Add to cart -->
                                                     <a class="btn border border-secondary rounded-pill px-3 text-primary mb-2"
-                                                        onclick="cart(event)">
+                                                        onclick="cart(event, 'nalangu')">
                                                         <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
                                                     </a>
                                                 </div>
@@ -1751,9 +1900,12 @@
                     <p class=" " style="color: #eee;">Bringing authentic homemade flavors to your kitchen since 2010.
                         Our spices and masalas are crafted with traditional recipes and premium ingredients.</p>
                     <div class="social-icons mt-4">
-                        <a href="https://www.facebook.com/The.Aroma.Hut.Masala/" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/the.aroma.hut/" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="https://api.whatsapp.com/send/?phone=%2B919677439397&text&type=phone_number&app_absent=0" class="text-white me-3"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/The.Aroma.Hut.Masala/" class="text-white me-3"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/the.aroma.hut/" class="text-white me-3"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=%2B919677439397&text&type=phone_number&app_absent=0"
+                            class="text-white me-3"><i class="fab fa-whatsapp"></i></a>
                         <!-- <a href="#" class="text-white"><i class="fab fa-youtube"></i></a> -->
                     </div>
                 </div>
@@ -1765,7 +1917,8 @@
                         <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
                         <li class="mb-2"><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
                         <li class="mb-2"><a href="cart.html" class="text-white text-decoration-none">Cart</a></li>
-                        <li><a href="https://aromahut-e817f.web.app" class="text-white text-decoration-none">Contact</a></li>
+                        <li><a href="https://aromahut-e817f.web.app" class="text-white text-decoration-none">Contact</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -1905,30 +2058,38 @@
             'upma-250g': 250.00,
 
             // Health Drink
-            'ulunthu-100g': 140.00,
-            'ulunthu-250g': 280.00,
-            'ulunthu-500g': 560.00,
-            'multigrain-100g': 225.00,
-            'multigrain-250g': 450.00,
-            'kollu-100g': 342.00,
-            'kollu-250g': 684.00,
-            'ragi-100g': 215.00,
-            'ragi-250g': 430.00,
-            'ragimilk-100g': 225.00,
-            'ragimilk-250g': 450.00,
+            'ulunthu-250g': 160.00,
+            'ulunthu-500g': 320.00,
+            'multigrain-250g': 120.00,
+            'multigrain-500g': 240.00,
+            'kollu-250g': 180.00,
+            'kollu-500g': 360.00,
+            'ragi-250g': 130.00,
+            'ragi-500g': 260.00,
+            'ragimilk-250g': 150.00,
+            'ragimilk-500g': 300.00,
 
             // Beauty Product
-            'nalangu-100g': 80.00,
-            'nalangu-250g': 160.00,
-            'nalangu-500g': 320.00,
-            'nalangu-1kg': 640.00,
+            'nalangu-250g': 265.00,
+            'nalangu-500g': 530.00,
+            'nalangu-1kg': 1060.00,
             'shikakai-100g': 150.00,
             'shikakai-250g': 300.00,
             'shikakai-500g': 600.00,
+            'shikakai-1kg': 1200.00,
             // Custom New Products
             'murungaipowder-100g': 80.00,
+            'murungaipowder-250g': 250.00,
+            'murungaipowder-500g': 400.00,
+            'karuppurice-1kg': 250.00,
+            // Murungai Keerai Idly/Rice Podi
             'murungaipodi-100g': 100.00,
-            'karuppurice-1kg': 250.00
+            'murungaipodi-250g': 250.00,
+            'murungaipodi-500g': 500.00,
+
+            'blackpepper-100g': 90.00,
+
+
 
         };
 
